@@ -1,0 +1,38 @@
+[
+    {
+    "p_name":"Apple",
+    "p_image": "https://thumbs.dreamstime.com/z/red-apple-isolated-clipping-path-19130134.jpg?w=576",
+    "p_id":1,
+    "p_cost":30,
+    "p_availability":1,
+    "p_details":"Imported from Swiss",
+    "p_category":"Red Color"
+    },
+    
+    {
+    "p_name":"Mango",
+    "p_image": "https://m.media-amazon.com/images/I/41EvGpCFECL._AC_UF1000,1000_QL80_.jpg",
+    "p_id":2,
+    "p_cost":50,
+    "p_availability":1,
+    "p_details":"Farmed at Selam",
+    "p_category":"Yellow Color"
+    },
+    {
+    "p_name":"Bananna",
+    "p_image": "https://m.media-amazon.com/images/I/51ebZJ+DR4L._AC_UF1000,1000_QL80_.jpg",
+    "p_id":3,
+    "p_cost":5,
+    "p_availability":0,
+    "p_category": "Yellow Color"
+    },
+    {
+    "p_name":"Orange",
+    "p_image": "https://thumbs.dreamstime.com/b/orange-fruit-22884921.jpg",
+    "p_id":4,
+    "p_cost":25,
+    "p_availability":1,
+    "p_details":"from Nagpur",
+    "p_category":"Orange Color"
+    }
+]

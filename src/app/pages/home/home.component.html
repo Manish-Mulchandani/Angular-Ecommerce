@@ -1,0 +1,88 @@
+<section id="product">
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-12">
+        <div class="productHeading text-center">
+            <div class="mt-3">
+                <label for="categorySelect ms-2">Select Category :</label>
+                <select id="categorySelect" [(ngModel)]="selectedCategory" (change)="filterProducts()">
+                  <option value="">All</option>
+                  <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                </select>
+              </div> 
+          <h2 class="mt-3">Products</h2>
+          <!-- <ul class="list-unstyled d-flex justify-content-center">
+            <li *ngFor="let category of categories" (click)="filterProducts(p_category)">
+              <a
+                href="#"
+                class="m-4 text-decoration-none text-danger fw-semibold"
+                >{{category}}</a
+              >
+            </li> -->
+            <!-- <li>
+              <a
+                href="#"
+                class="m-4 text-decoration-none fw-semibold text-black"
+                >Best Sellers</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="m-4 text-decoration-none fw-semibold text-black"
+                >Featured</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="m-4 text-decoration-none fw-semibold text-black"
+                >Special Offer</a
+              >
+            </li> -->
+          <!-- </ul> -->
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row mt-3">
+          <div class="col-lg-3 pt-1" *ngFor="let product of filteredProducts">
+            <div class="box-shadow">
+              <div class="card">
+                <img
+                  class="img-fluid"
+                  style="height: 200px"
+                  [src]="product.p_image"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title">{{ product.p_name }}</h5>
+                  <p class="card-text">
+                    <span class="text-danger fw-semibold me-2"
+                      >${{ product.p_cost }}</span
+                    >
+                  </p>
+                  <input  type="number" style="width: 180px;" [(ngModel)]="product.quantity" min="1" step="1" />
+                  <button class="btn btn-sm btn-success mt-2" (click)="addToCart(product, product.quantity)"> Add To Cart</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="cartItems.length > 0">
+    <h2 class="mt-3">Shopping Cart</h2>
+    <ul>
+      <li *ngFor="let item of cartItems">
+        {{ item.product.p_name }} - Quantity: {{ item.quantity }}
+      </li>
+    </ul>
+    <button (click)="clearCart()">Clear Cart</button>
+  </div>
+  <div *ngIf="cartItems.length === 0">
+    <p class="mt-3">Cart is empty.</p>
+  </div>
+</section>
